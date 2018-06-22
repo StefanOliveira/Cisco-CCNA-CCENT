@@ -1,0 +1,14 @@
+#Mais configurações - Comandos diversos
+
+no hostname (Apaga o nome atual e retorna padrão)
+hostname Router1 (Exemplo nomear)
+shutdown (Na interface - desativa porta)
+enable secret (Adicionar senha de proteção de config)
+line vty 0 4 (Habilitar em todas as linhas virtuais - telnet)
+-transport input telnet
+-password *********
+-end
+banner motd # (Adicionar mensagem - tela inicial)
+
+
+
