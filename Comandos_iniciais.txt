@@ -1,0 +1,25 @@
+Comandos iniciais
+
+? = Help
+enable = Modo de configuração (ena)
+show ip interface brief = Quantidades e tipos de interface
+
+Ex config - Router (interface 0/0)
+ena
+conf t
+interface ethernet 0/0
+ip adress 192.168.10.1 255.255.255.0
+no shutdown (Habilitar interface, off por padrão)
+end
+wr (Salvar config)
+
+Ex config - Switch (Configuração de ip em vlan)
+en
+conf t
+interface vlan 1
+ip address 192.168.10.10 255.255.255.0
+no shutdown
+wr
+
+
+
