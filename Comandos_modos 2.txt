@@ -1,0 +1,18 @@
+Editando Informações - Utilize "?" antes ou durante um comando 
+
+> ena
+
+# conf t
+
+(config)#hostname <name>
+
+# clock set 15:06:35 10 SEP 2018 (Utilizar NTP - Comando não utilizado)
+
+(config)#ntp server <IP - HOST>
+
+(config)#enable secret <**********> (Não muito usado, servidor de credenciais EX: RADIUS)
+
+
+
+
+

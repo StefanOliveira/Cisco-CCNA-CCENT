@@ -1,0 +1,17 @@
+Endereçamento IP - Interfaces
+
+Configuração
+R1>enable / ena
+R1#config terminal / conf t
+R1(config)#inter / interface <GigabitEthernet 0/0> (Exemplo de interface)
+R1(config-if)#ip address 192.168.10.1 255.255.255.0
+-------------------------------------------------------------------------
+
+R1#show run (Exibe configurações que estão no equipamento)
+-------------------------------------------------------------------------
+
+R1>enable / ena
+R1#config terminal / conf t
+R1(config)#inter / interface <GigabitEthernet 0/0> (Exemplo de interface)
+R1(config-if)#no shutdown (usando o comando "no")
+-------------------------------------------------------------------------

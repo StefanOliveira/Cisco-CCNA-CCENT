@@ -1,0 +1,18 @@
+IOS Modes
+Acesso via Putty
+
+User Mode > Verificação
+
+Privileged Mode # Root - (Comando | Enable)
+
+Configure Mode (config)# Configuração (Comando | Configure terminal)
+
+Interface Mode (config-if)# Configuração das interfaces
+--------------------------------------------------------------------
+
+#show interface brief --Lista as interfaces disponíveis
+
+Configurando interfaces
+entre no modo config
+(config)# interface GigabitEthernet 0/1 (Atente-se ao nome da interface - Ex: ethernet, gigabitethernet)
+

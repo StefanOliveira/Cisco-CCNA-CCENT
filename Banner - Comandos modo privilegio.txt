@@ -1,0 +1,25 @@
+#Criando banner
+en
+conf t
+banner motd ?
+banner motd @
+------------------------------------------------
+------------------------------------------------
+
+                 STEFAN CCNAv3
+
+------------------------------------------------
+------------------------------------------------
+@
+
+#Criptografar senha - running config
+show running-config #rolando para baixo a senha está à amostra
+
+service password-encryption
+
+#Renomear/Descrição interface - Qual o papel da interface - Muito importante
+interface Ethernet0/0 ou interface GigabitEthernet0/0
+description --- CONNECTED TO SW1 F0/1 ---
+
+#Utilizando comandos de na tela de config
+do show ? #Exemplo: do show running-config

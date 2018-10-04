@@ -1,0 +1,38 @@
+#Habilitar telnet
+ena
+conf t
+
+#virtual terminal type - 0 primeira sessão 4 ultima
+line vty 0 4
+password *******
+login 
+
+#Acessar via telnet - pode ser acessado via comando telnel + IP ou apenas
+#Digitando o IP do equipamento
+#listar sessões ativas
+show user
+
+-----------------------------------------------------------------------------
+#Exibir configurações
+show running-config #show run
+
+#lines ficam sempre no final
+#verificar protocolos utilizados
+transport input ?
+
+#habilitar ssh
+transport input ssh
+
+#suspender sessão
+ctrl shift 6 - solta e aperta x
+
+#alternar entre sessões
+show sessions
+#digite o número da sessão
+#desconectar sessão 1
+disconnect 1
+
+#Linha limpa
+line vty 0 4
+logging synchronous
+
