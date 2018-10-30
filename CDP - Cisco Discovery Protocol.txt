@@ -1,0 +1,9 @@
+#CDP - Cisco Discovery Protocol - Exibe os dispositivos CISCO na Rede
+#Endereço de destino de multicast 01-00-0c-cc-cc-cc
+show cdp neighbors
+
+#Debug - comandos
+debug ? #exibe opções do comando debug
+
+#Terminal monitor - Todas mensagens da console aparece para Telnet
+terminal monitor

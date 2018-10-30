@@ -1,0 +1,19 @@
+#Classes IPv4
+#São definidas sempre pelo primeiro octeto
+A = 0.0.0.0 - 127.255.255.255
+
+B = 128.0.0.0 - 191.255.255.255
+
+C = 192.0.0.0 - 255.255.255.255
+
+D = 224.0.0.0 - 239.255.255.255 (Predefinida para MultiCast)
+
+E = 240.0.0.0 - 255.255.255.255 (Research - Pesquisa)
+
+#Subnet Mask
+A = 255.0.0.0 (Grande Porte)
+
+B = 255.255.0.0 (Medio Porte)
+
+C = 255.255.255.0 (Pequeno Porte)
+

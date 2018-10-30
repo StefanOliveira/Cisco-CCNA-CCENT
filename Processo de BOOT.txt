@@ -1,0 +1,18 @@
+#Roteadores Cisco
+Possuem RAM, NVRAM, FLASH, ROM
+Ao ligar efetua o POST(Testes Iniciais)
+Caso tudo ocorra inicia o BOOTSTRAP(ROM - Menu de Inicialização),
+busca as configurações.
+Após o bootstrap irá iniciar a Configuration Register (0x2102 padrão cisco)
+IOS(FLASH)-> Se encontrar IOS -> Load in RAM 
+Se não encontrar IOS -> Busca TFPT Server -> Carrega IOS na RAM
+Se não encontrar no TFTP -> entra na ROM -> ROMMON MODE > MINI-IOS
+Permite configurar endereçamento de IP para baixar um IOS
+Após carregar o IOS ele checa a NVRAM(StartUp-Config) -> IOS Loaded
+Funcional!
+-----------------------------------------------------------------------------
+#Salvar a configuração - CP Config RAM -> NVRAM
+copy run start #Ou wr
+
+#Reiniciar equipamento
+reload
