@@ -1,0 +1,31 @@
+Comandos Utilizados
+#show vlan brief 
+(Exibe as vlans configuradas)
+
+#vlan 10
+(Cria vlan de número 10)
+
+#vlan 10
+(Para acessar a vlan, no modo config digite vlan + número)
+
+#name SALES
+(Renomeia a vlan)
+
+#excluir vlan
+no vlan 10
+
+Para adicionar uma porta a VLAN criada 
+utilize os comandos abaixo em modo config, 
+acesse a porta a ser adicionada
+
+#inter Fa0/1
+#switch port mode access
+#switch port access vlan 10
+
+Para Remover:
+#no switchport access vlan 10
+
+OBS: switchport mode
+access (Connect End Device, sempre access)
+trunk (Connect switch, router)
+dynamic(Somente para switch,router, mas não recomendado)
