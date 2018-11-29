@@ -1,0 +1,15 @@
+#Voice VLAN - Switch
+#Comandos
+ena
+conf t
+vlan 100
+name VOICE
+inter Fa0/3 			#Acesse a interface em que o telefone ip estiver conectado
+switchport vlan 10 		#Adicione ela a uma Vlan Data traffic
+switchport voice vlan 100 	#Adicione ela a Vlan de Voice traffic
+do show run int Fa0/3		#Verifique em quais Vlans a porta está
+interface FastEthernet0/3
+ switchport access vlan 10
+ switchport mode access
+ switchport voice vlan 100
+!

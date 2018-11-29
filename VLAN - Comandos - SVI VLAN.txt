@@ -1,0 +1,25 @@
+SVI - Roteamento entre VLAN - Switch Layer 3 (Switch Virtual Interface)
+
+#Comandos, no modo de configuração
+#Primeira SVI - VLAN 10
+ip routing 				#Habilita o roteamento no switch
+show ip route				#Exibe a tabela de roteamento
+interface vlan 10			#SVI - Utilizado para endereçamento e comunicação com VLAN a VLAN 10, utilizada como exemplo 
+ip address 192.168.10.254 255.255.255.0	#Será utilizado para comunicação com a VLAN 10 e possível gateway da rede
+no shutdown
+#Configurando/Desabilitando roteamento adicionando gateway do roteador para roteamento SVI
+show ip route
+conf t
+no ip routing
+ip default-gateway 192.168.10.254 #Repita o procedimento nos outros roteadores mudando o gateway conforme a rede
+
+
+#Segunda SVI - VLAN 20
+interface vlan 20
+ip address 192.168.20.254 255.255.255.0
+no shutdown
+
+#Segunda SVI - VLAN 30
+interface vlan 30
+ip address 192.168.30.254 255.255.255.0
+no shutdown
