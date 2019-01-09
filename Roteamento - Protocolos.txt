@@ -1,0 +1,78 @@
+# Conceitos de Roteamento
+
+*Static Route - Statics
+Se convergência automatica
+
+*Dynamic Routing
+-IS-IS = Intermediate System - Intermediate System
+# Baseado em HOPS - Caso um link possua velocidade inferior o balanceamento fica lento
+-RIP v1 = Routing Information Protocol (Descontinuado)
+-RIP v2 = Routing Information Protocol v2
+# Baseados em Velocidade - Escolhe automáticamente a rota mais rápida - Convergência automatica
+-IGRP = Interior Gateway Routing Protocol
+-EIGRP = Enhanced Interior Routing Protocol
+-OSPF v1,v2,v3 =  Open Shortest Path First (IPV4 e IPV6) - Possui LOAD BALANCE - Caso possua mais de um rota para uma mesma rede
+-BGP = Border Gateway Protocol (Principal responsável pelo Funcionamento da Internet - Roteamento entre Telecom)
+
+*Preparando Ambiente Virtual
+# Criando interface virtual para simular PC em Roteador, no modo conf t utilize os comando abaixo
+interface loopback 0
+ip add <Endereço de IP> <Mascara SubNet>
+no shutdown
+
+# Para confirmar se tudo está Ok utilize o comando
+show ip interface brief # Exibe o endereçamento e informações das portas
+show ip route # RIB - Exibe a Tabela de Roteamento - (L - Local, C - Conectado, S - Static)
+
+# Configurando a Rota Estática
+ip route <IP Rede> <Mascara> <Interface ou IP> # Utilize de preferência a Interface
+show arp # Exibe o endereço dos "Transmissores"
+ping 192.168.1.1 source 172.16.1.1 # Ping utilizando IP de origem
+
+# Remover Rota
+no ip route <endereço> <NetMask> <IP ou Interface>
+
+RIP v1/v2 - Routing Information Protocol
+Limitado a 15 hops (Metric Hop counts)
+v1 -> 1988 -> RFC1058
+v2 -> 1993/1998 -> RFC2453
+Utiliza "messages" para comunicação
+Request Message <-> Response Message
+Porta 520
+Utilize Split Horizon para prevenção de Loops
+Poison Reverse - Para identificar redes "Unreachable"(Indisponiveis)
+
+# Configurando o RIP - Exemplo 3 Roteadores
+R1 - 172.16.1.1 255.255.255.0 - interface loopback
+Interface e0/0 ip add 10.1.1.1 255.255.255.0
+R2 - 172.16.2.2 255.255.255.0 - interface loopback
+Interface e0/0 ip add 10.1.1.2 255.255.255.0
+Interface e0/1 ip add 10.2.2.2 255.255.255.0 (Ligada ao R3)
+R3 - 172.16.3.3 255.255.255.0 - interface loopback
+interface e0/1 10.2.2.3 255.255.255.0 (Ligada ao R2)
+# Habilitando e Configurando
+Modo de Config R1 - router rip - version ? - version 2
+# Habilitar roteamento via interface - publicar endereçamento
+network 172.16.1.0
+Modo de Config R2 - router rip - version 2
+network 172.16.2.0
+# Comunicação entre as Rotas - R1 e R2
+router rip - network 10.1.1.0
+
+# Comandos de Debug | Information - 30 em 30 segundos mensagem
+debug ip rip
+und all
+show ip rip database
+show ip protocols
+show ip route
+show ip route rip
+
+# 4 Timers São Utilizados
+Update - 30Sec
+Invalid - 180Sec
+Flushed - 240Sec
+Hold Down - 180Sec
+
+
+
+
