@@ -66,6 +66,7 @@ show ip rip database
 show ip protocols
 show ip route
 show ip route rip
+no auto-summary #modo de config, router, rip, exibe as interfaces sem comprimi-las
 
 # 4 Timers São Utilizados
 Update - 30Sec
@@ -73,6 +74,8 @@ Invalid - 180Sec
 Flushed - 240Sec
 Hold Down - 180Sec
 
+AD = 120 #Administration Distance
+Hop Count = 15 - Metrica
 
 
 

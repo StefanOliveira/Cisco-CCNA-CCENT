@@ -1,0 +1,17 @@
+# Roteamento - Router On Stick - Não Recomendado
+
+Topologia
+Router - R1
+Switch - SW1 - Layer2
+VLAN 10 - 3 Computadores - 192.168.10.*
+VLAN 30 - 3 Computadores - 192.168.20.*	
+
+# No roteador - Crie Sub-Interfaces
+# Modo de config:
+interface f0/0.10
+encapsulation dot1Q 10
+ip add 192.168.10.254 255.255.255.0
+
+interface f0/0.20
+encapsulation dot1Q 10
+ip add 192.168.20.254

@@ -1,0 +1,17 @@
+DV x LS x PV
+
+# Distance Vector - Protocolos
+# Utilizam Split Horizon e Poison Reverse para prevenir Loop na Camada 3
+RIP v1
+RIP v2
+IGRP
+EIGRP
+
+# Link State - Protocols
+# Não utiliza sistema de prevenção de Loop, enxerga a topologia toda
+OSPF
+IS-IS
+
+# Path Vector - Protocols
+# Comunicação via Caminhos - AS - Autonomous System
+BGP
