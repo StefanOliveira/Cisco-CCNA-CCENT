@@ -1,0 +1,26 @@
+# Radius/TACACS
+# Radius = FreeRadius/Windows Server
+# TACACS = Cisco Server
+
+# Privilégios TACACS
+Priv 0 a 15
+Referencias: 
+https://www.cisco.com/c/pt_br/support/docs/security/secure-access-control-system/113590-acs5-tacacs-config.html
+
+# Command Line
+ena
+conf t
+aaa new-model # authentication(user, pass), authorization(groups), accounting(logs)
+username <user> secret <pass> # Caso o servidor de autenticação caia, utilize esse usuário, só funciona nesse caso
+enable secret <pass>
+tacacs-server host <IP_ADDRESS> key <key-conf-server>
+tacacs server <nome>
+aaa authentication ?
+aaa authentication login default group tacacs+/<nomegroup> local # Caso falhe, busca local
+aaa authorization ?
+aaa authorization exec 
+aaa authorization exec default group tacacs+/<nomegroup> local
+aaa accounting commands 15 default # Logs de comandos do nível 15
+
+# Interface de conexão com o server
+ip tacacs source-interface <interface>

@@ -1,0 +1,27 @@
+# NAT/PAT
+# NAT = Network Address Translation
+# PAT = Port Address Translation
+# Apagar NAT - Caso precise reconfigurar
+clear ip nat translation *
+
+# Topologia de Testes
+PC1 - 192.168.0.10
+SW1 - NOIP
+
+# R1
+f0/0 - inside - 192.168.0.10/24
+ip nat inside
+s2/0 - outside - 189.1.1.2/24
+ip nat outside
+encapsulation ppp
+ip route 0.0.0.0 0.0.0.0 189.1.1.3
+# Configurando NAT para uma ou várias rotas
+ip nat inside source static <ip-adress> interface s2/0 # modo conf t
+access-list 1 permit 192.168.0.0 0.0.0.255 # Lista de permissões NAT *ACL
+ip nat inside source list 1 interface s2/0 overload # Overload = PAT
+
+# R3
+s2/0 outside - 189.1.1.3/24
+encapsulation ppp
+ip route 192.168.0.0 255.255.255.0 s2/0
+

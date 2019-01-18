@@ -1,0 +1,8 @@
+# Comandos Básicos
+enable (Habilita visualização de Configurações)
+configure terminal (Modo de confinguração)
+hostname <nome> (Modifica o nome do equipamento)
+wr memory (Salva as configurações)
+no dhcpd address <IP_INICIAL>-<IP_FINAL) inside (Desabilita o Serviço de DHCP)
+Exemplo: no dhcpd address 192.168.1.5-192.168.1.36 inside
+copy running-config startup-config (Salva as configurações na inicilização do equipamento)

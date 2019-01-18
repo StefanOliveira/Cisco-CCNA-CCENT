@@ -21,5 +21,5 @@ ip address 192.168.10.10 255.255.255.0
 no shutdown
 wr
 
-
-
+# DNS Server
+ip name-server <IP>

@@ -1,0 +1,16 @@
+# NTP - Network Time Protocol
+conf t
+clock timezone <nome> -3
+clock summer-time BRT date <DATA>
+show logging
+
+# Configurando o NTP Server
+ena
+clock set <00:00:00> <DD> <MES> <ANO>
+show clock
+ntp master
+show ntp status
+
+# Utilizando um NTP externo
+ntp server <hostname>
+show ntp associations

@@ -1,0 +1,10 @@
+# SNMP - v1 - v2 - v3(Encriptado - Recomendado)
+snmp-server host <ip-address> <community>
+snmp-server community <community> (ro - read only ou rw - read write)
+snmp-server enable traps <service> # Logs sobre um assunto
+show snmp # Exibe informações sobre a configuração
+
+# SYSLOG
+logging <ip-address> (Envia informações sobre o sistema do equipamento)
+
+

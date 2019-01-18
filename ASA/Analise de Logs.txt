@@ -1,0 +1,8 @@
+# ASA Troubleshooting
+# DOS Attack - Habilitando o log e Analisando
+
+conf t
+sh run log
+logging buffered debug
+logging buffer-siza 100000
+show log
